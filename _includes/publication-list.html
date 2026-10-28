@@ -1,0 +1,14 @@
+<ol class="publication-list">
+{% for publication in site.data.publications %}
+  <li class="publication-item">
+    <h3>{{ publication.title | escape }}</h3>
+    <p class="publication-authors">{% for publication_author in publication.authors %}{% if publication_author == site.name %}<strong>{{ publication_author | escape }}</strong>{% else %}{{ publication_author | escape }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+    <p class="publication-meta"><em>{{ publication.venue | escape }}</em> {{ publication.year }} &middot; {{ publication.role | escape }}</p>
+    {% if publication.code_repository %}
+      <p class="publication-code">GitHub code repository: <code>{{ publication.code_repository | escape }}</code>.</p>
+    {% elsif publication.has_code %}
+      <p class="publication-code">GitHub code repository available.</p>
+    {% endif %}
+  </li>
+{% endfor %}
+</ol>
