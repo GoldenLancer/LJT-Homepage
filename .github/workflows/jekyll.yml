@@ -4,6 +4,11 @@ on:
   push:
     branches: ["master"]
   workflow_dispatch:
+    inputs:
+      deploy:
+        description: "Deploy after building (requires an enabled GitHub Pages site)"
+        type: boolean
+        default: true
 
 permissions:
   contents: read
@@ -72,14 +77,21 @@ jobs:
             abort "Missing contact link #{contact}" unless homepage.include?(contact)
           end
           abort 'Incorrect project-site base path' unless homepage.include?('https://goldenlancer.github.io/LJT-Homepage/')
-          abort 'Stock profile image still present' if homepage.include?('/images/profile.png') || homepage.include?('/images/og-image.png')
+          abort 'Stock profile image still referenced' if homepage.include?('/images/profile.png') || homepage.include?('/images/og-image.png')
+          %w[profile.png bio-photo.jpg bio-photo-2.jpg og-image.png editing-talk.png manifest.json].each do |asset|
+            abort "Template-only image asset shipped: #{asset}" if File.exist?("_site/images/#{asset}")
+          end
+          abort 'Unexpected template feed or redirects' if File.exist?('_site/feed.xml') || File.exist?('_site/redirects.json')
           abort 'Missing generated stylesheet' unless File.file?('_site/assets/css/main.css')
-          puts 'Verified: only About and Publications pages; all six publications appear on both; memory contact links and homepage sections are present.'
+          puts 'Verified: only About and Publications pages; all six publications appear on both; memory contact links and homepage sections are present; no template photos or demo pages are shipped.'
           RUBY
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v5.0.0
+        with:
+          retention-days: 7
 
   deploy:
+    if: github.event_name != 'workflow_dispatch' || inputs.deploy
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

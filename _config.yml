@@ -82,6 +82,15 @@ exclude:
   - assets/js/_main.js
   - assets/js/plugins
   - assets/js/vendor
+  - images/profile.png
+  - images/bio-photo.jpg
+  - images/bio-photo-2.jpg
+  - images/og-image.png
+  - images/500x300.png
+  - images/editing-talk.png
+  - images/manifest.json
+  - images/themes
+  - images/wiki
   - _drafts
   - _posts
   - _publications
