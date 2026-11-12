@@ -1,24 +1,17 @@
 ---
-layout: archive
-title: "Posts by Collection"
 permalink: /collection-archive/
-author_profile: true
+sitemap: false
 ---
-
-{% include base_path %}
-{% capture written_label %}'None'{% endcapture %}
-
-{% for collection in site.collections %}
-  {% unless collection.output == false or collection.label == "posts" %}
-    {% capture label %}{{ collection.label }}{% endcapture %}
-    {% if label != written_label %}
-      <h2 id="{{ label | slugify }}" class="archive__subtitle">{{ label }}</h2>
-      {% capture written_label %}{{ label }}{% endcapture %}
-    {% endif %}
-  {% endunless %}
-  {% for post in collection.docs %}
-    {% unless collection.output == false or collection.label == "posts" %}
-      {% include archive-single.html %}
-    {% endunless %}
-  {% endfor %}
-{% endfor %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0; url={{ site.baseurl }}/">
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/">
+  <title>Redirecting to Junteng Liu</title>
+</head>
+<body>
+  <p>Redirecting to <a href="{{ site.baseurl }}/">Junteng Liu's homepage</a>.</p>
+</body>
+</html>

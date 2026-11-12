@@ -1,16 +1,17 @@
 ---
 permalink: /non-menu-page/
-title: "Page not in menu"
-author_profile: true
-redirect_from: 
-  - "/nmp/"
-  - "/nmp.html"
+sitemap: false
 ---
-
-This is a page not in the menu. You can use markdown in this page.
-
-Heading 1
-======
-
-Heading 2
-======
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0; url={{ site.baseurl }}/">
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/">
+  <title>Redirecting to Junteng Liu</title>
+</head>
+<body>
+  <p>Redirecting to <a href="{{ site.baseurl }}/">Junteng Liu's homepage</a>.</p>
+</body>
+</html>
