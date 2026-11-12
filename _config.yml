@@ -35,25 +35,10 @@ talkmap_link: false
 
 comments:
   provider: false
-  disqus:
-    shortname:
-  discourse:
-    server:
-  facebook:
-    appid:
-    num_posts:
-    colorscheme:
-  staticman:
-  custom:
 
 atom_feed:
   hide: false
   path:
-
-google_site_verification:
-bing_site_verification:
-alexa_site_verification:
-yandex_site_verification:
 
 twitter:
   username: "junteng88716710"
@@ -80,16 +65,20 @@ analytics:
 include:
   - .htaccess
   - _pages
-  - files
 
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
   - .bundle
+  - .devcontainer/
   - .github
   - .jekyll-assets-cache
   - .sass-cache
+  - AGENTS.md
+  - Dockerfile
+  - README.md
+  - _config_docker.yml
   - _drafts/
   - _portfolio/
   - _posts/
@@ -98,20 +87,21 @@ exclude:
   - assets/js/_main.js
   - assets/js/plugins
   - assets/js/vendor
-  - CHANGELOG
-  - Capfile
-  - config
-  - Dockerfile
-  - Gemfile
-  - Gruntfile.js
-  - gulpfile.js
-  - LICENSE
-  - local
-  - log
+  - docker-compose.yaml
+  - files/
+  - images/500x300.png
+  - images/bio-photo.jpg
+  - images/bio-photo-2.jpg
+  - images/editing-talk.png
+  - images/wiki/
+  - markdown_generator/
   - node_modules
   - package.json*
-  - Rakefile
-  - README
+  - scripts/
+  - talkmap/
+  - talkmap.ipynb
+  - talkmap.py
+  - talkmap_out.ipynb
   - tmp
   - vendor
 
