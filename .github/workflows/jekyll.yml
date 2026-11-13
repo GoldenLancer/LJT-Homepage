@@ -86,7 +86,7 @@ jobs:
             "In-Context Sharpness as Alerts" \
             "C-Eval: A Multi-Level Multi-Discipline" \
             "Composing Parameter-Efficient Modules"; do
-            grep -Fq "$text" _site/index.html
+            grep -Fiq "$text" _site/index.html
           done
           for text in \
             "SynLogic: Synthesizing" \
@@ -96,12 +96,13 @@ jobs:
             "C-Eval: A Multi-Level Multi-Discipline" \
             "Composing Parameter-Efficient Modules" \
             "EMNLP 2024" "ICML 2024" "NeurIPS 2023"; do
-            grep -Fq "$text" _site/publications/index.html
+            grep -Fiq "$text" _site/publications/index.html
           done
-          if grep -R -Ei "Paper Title Number|GitHub Journal of Bugs|Academic Pages is a ready|Red Brick University|none@example.org" _site/index.html _site/publications; then
+          if grep -R -Ei "Paper Title Number|GitHub Journal of Bugs|Academic Pages is a ready|Red Brick University|none@example.org|Skill 1" _site/index.html _site/publications; then
             echo "Template placeholder content found in generated site" >&2
             exit 1
           fi
+          echo "Homepage and publications verification passed."
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v5.0.0
