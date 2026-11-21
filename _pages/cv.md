@@ -9,56 +9,44 @@ redirect_from:
 
 {% include base_path %}
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+Junteng Liu is a first-year PhD candidate at the HKUST NLP Group. His research focuses on natural language processing and machine learning.
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+## Education
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+- **Ph.D. in Computer Science**, Hong Kong University of Science and Technology, 2024–Present.
+- **B.Eng.**, Shanghai Jiao Tong University, 2020–2024; graduated in June 2024.
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+## Honors and Awards
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+- Zhiyuan Honor Scholarship, Shanghai Jiao Tong University.
+
+## Research Experience
+
+- **Research Intern, MINIMAX** (February 2025–Present).
+- **PhD Candidate / Researcher, HKUST NLP Group** (2024–Present), supervised by Professor Junxian He.
+- **Research Intern, Tencent WXG** (June 2024–September 2024), advised by Zifei Shan.
+- **Research Intern, Shanghai AI Lab** (June 2023–December 2023), advised by Prof. Yu Cheng.
+
+## Skills and Research Interests
+
+- Natural language processing.
+- Machine learning.
+- LLM reasoning and reinforcement learning.
+- Hallucination in vision-language models.
+- LLM truthfulness and interpretability.
+
+## Publications
+
+{% assign cv_publications = site.publications | sort: "order" %}
+<ul>
+{% for post in cv_publications %}
+  {% include archive-single-cv.html %}
+{% endfor %}
+</ul>
+
+## Contact
+
+- Email: [jliugi@connect.ust.hk](mailto:jliugi@connect.ust.hk)
+- GitHub: [Vicent0205](https://github.com/Vicent0205)
+- Google Scholar: [Profile](https://scholar.google.com/citations?hl=en&user=tbK9jl4AAAAJ&view_op=list_works&sortby=pubdate)
+- X (Twitter): [@junteng88716710](https://x.com/junteng88716710)
